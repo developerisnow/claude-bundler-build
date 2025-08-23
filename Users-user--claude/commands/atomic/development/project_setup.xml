@@ -1,0 +1,21 @@
+<project_setup>
+  <must_have>
+    🎯 cheatsheet: {prefix}<tool>-<project>.cheatsheet.md
+    🔄 sync-cheatsheets.sh for SSOT
+    📊 linters + formatters configured
+    🔀 git-flow branching
+    📈 mermaidjs diagrams
+  </must_have>
+  
+  <github_structure>
+    Epic → Story → Task → Issue (parent-child linked)
+  </github_structure>
+  
+  <principles>YAGNI → KISS → DRY → SOLID → Clean Architecture → TDD/TAD → DDD. Focus on JTBD too.</principles>
+  
+  <version_check>
+    ⚠️ ALWAYS verify current versions before updates
+    🔍 Use nvm/pyenv/etc to check environment depends on language
+    🌐 Web search for latest if unknown
+  </version_check>
+</project_setup>

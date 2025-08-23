@@ -1,0 +1,1 @@
+Always Use sub-agents task tool where you need to parallelize or economo your context window! Use it smartly - feed them enough relevant context and prompting and expectected outputs and they will do their job.

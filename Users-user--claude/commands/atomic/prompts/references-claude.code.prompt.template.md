@@ -1,0 +1,3 @@
+- REFERENCES:
+  - use task tool sub-agent to learn content from {{ path-to-files(s) with content of it }}
+  - use task tool sub-agent to learn content from {{ path-to-files(s) with content of it }}

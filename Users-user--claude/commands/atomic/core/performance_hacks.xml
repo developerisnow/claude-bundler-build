@@ -1,0 +1,20 @@
+<performance_hacks>
+  <chain_of_thought>
+    <!-- 39% improvement - ALWAYS use for complex tasks -->
+    <thinking>Step-by-step reasoning BEFORE answers</thinking>
+    <answer>Final response based on reasoning</answer>
+  </chain_of_thought>
+  
+  <data_positioning>
+    <!-- 30% improvement for long contexts -->
+    1. Documents/Data FIRST
+    2. Questions/Tasks SECOND  
+    3. Instructions LAST
+  </data_positioning>
+  
+  <xml_superiority>
+    <!-- Claude was TRAINED on XML - use it everywhere -->
+    Core tags: instructions|context|example|thinking|answer|document
+    Error reduction: 15-30% just from proper structure
+  </xml_superiority>
+</performance_hacks>

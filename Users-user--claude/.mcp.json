@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "fetch": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-fetch"
+      ]
+    },
+    "filesystem": {
+      "command": "/Users/user/.nvm/versions/node/v20.18.1/bin/node",
+      "args": [
+        "/Users/user/__Repositories/LLMs-MCP-Anthropic/servers/src/filesystem/dist/index.js",
+        "/Users/user/__Repositories",
+        "/Users/user/.config/",
+        "/Users/user/____Sandruk",
+        "/Users/user/NextCloud2",
+        "/Users/user/Downloads"
+      ]
+    }
+  }
+}

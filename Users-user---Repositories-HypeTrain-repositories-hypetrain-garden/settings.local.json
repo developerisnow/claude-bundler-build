@@ -1,0 +1,24 @@
+{
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "deepwiki",
+    "knowledge",
+    "postgres",
+    "fetch",
+    "filesystem",
+    "tree-sitter",
+    "memory-keeper",
+    "tgmcp",
+    "claude-exporter",
+    "serena",
+    "ai-distiller",
+    "perplexity-dainfernalcoder",
+    "perplexity-daniel-lxs",
+    "perplexity-official",
+    "exa",
+    "brave-search",
+    "sequential-thinking",
+    "time"
+  ],
+  "outputStyle": "default"
+}

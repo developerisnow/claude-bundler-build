@@ -1,0 +1,1 @@
+# Self-improovement cycle. all commands, rules, profiles, and other settings in "./claude/**/*" with insights and new learnings necessary upgrades

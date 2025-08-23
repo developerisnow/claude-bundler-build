@@ -1,0 +1,18 @@
+<memory_bank_iteration>
+  Each your iteration has artefacts.
+  You MUST put it in correct way in accordance with $memory_bank_structure
+</memory_bank_iteration>
+<memory_bank_structure>
+  <!-- Standard memory-bank organization -->
+  ./memory-bank/
+  └── sessions/
+      ├── {yyyymmdd}-{Day}/
+      │   ├── {yyyymmdd-hhmm}-{title}.md
+      │   └── {yyyymmdd-hhmm}-{another-title}.md
+      └── {yyyymmdd}-{Day}/
+          └── {yyyymmdd-hhmm}-{title}.md
+  
+  <!-- Day format: Mo, Tu, We, Th, Fr, Sa, Su -->
+  Example: 20250628-Sa/
+  Never concatinate timeslots ~15min, на самом деле часто ты делаешь за 1-5 минут документ а добавляешь +15 минут к каждому следующему - пиши настоящее CREATED в UTC+3
+</memory_bank_structure>

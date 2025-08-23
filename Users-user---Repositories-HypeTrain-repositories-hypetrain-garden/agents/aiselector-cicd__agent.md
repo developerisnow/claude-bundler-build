@@ -1,0 +1,1 @@
+/Users/user/____Sandruk/___PKM/.claude/_claude-folders/projects/claude-ht-monorepo/agents/agents-ht-back-aiselector/aiselector-cicd__agent.md

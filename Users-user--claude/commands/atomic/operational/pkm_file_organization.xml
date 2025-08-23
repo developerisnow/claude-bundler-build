@@ -1,0 +1,80 @@
+<file_organization>
+  <pattern_detection>
+    <!-- Auto-detect project type based on structure -->
+    <pkm_pattern>
+      <!-- Personal Knowledge Management uses ./{project} structure -->
+      IF has(".git") AND NOT obsidian → PKM pattern
+      Structure: other not needed - set in Claude-Desktop-Preferences
+      Exception: Obsidian PKM has git but uses different pattern
+    </pkm_pattern>
+    
+    <monorepo_root_pattern>
+      <!-- HypeTrain monorepo root: multiple memory-bank-* directories -->
+      IF has("memory-bank/memory-bank-backend-*") AND has("memory-bank/memory-bank-devops-*") → Monorepo root
+      Structure: memory-bank/memory-bank-{service}-{project}/sessions/
+      Target: Redirect to specific service memory-bank via symlinks
+      
+      Detection commands:
+      ls memory-bank/ | grep -E "memory-bank-(backend|devops|frontend|docs)-"
+      readlink -f memory-bank  # Check if it's symlink to specific service
+    </monorepo_root_pattern>
+    
+    <service_specific_pattern>
+      <!-- Service-specific repo with symlinked memory-bank -->
+      IF has("memory-bank") AND readlink("memory-bank") → Service pattern
+      Structure: memory-bank/ → symlink to ../memory-bank/memory-bank-{service}-{project}/
+      Target: Use symlinked directory directly (memory-bank/**/*.md)
+      
+      Detection commands:
+      [ -L "memory-bank" ] && echo "symlinked" || echo "direct"
+      readlink memory-bank  # Shows target: ../memory-bank/memory-bank-devops-hypetrain
+    </service_specific_pattern>
+    
+    <standard_pattern>
+      <!-- Standard project: direct memory-bank directory -->
+      IF has("memory-bank/") AND NOT symlink → Standard pattern
+      Structure: memory-bank/sessions/{date}-{title}/
+      Target: Use direct memory-bank structure
+    </standard_pattern>
+  </pattern_detection>
+
+  <memory_bank_structure>
+    <!-- Standard memory-bank organization -->
+    ./memory-bank/
+    └── sessions/
+        ├── {yyyymmdd}-{Day}__{project}/
+        │   ├── {yyyymmdd-hhmm}-{title}.md
+        │   └── {yyyymmdd-hhmm}-{another-title}.md
+        └── {yyyymmdd}-{Day}__{another-project}/
+            └── {yyyymmdd-hhmm}-{title}.md
+    
+    <!-- Day format: Mo, Tu, We, Th, Fr, Sa, Su -->
+    Example: 20250628-Sa__ccexporter/
+  </memory_bank_structure>
+
+  <docs_structure>
+    <!-- Documentation that's more global/common -->
+    ./docs/
+    └── {category}/
+        └── {yyyymmdd-hhmm}-{title}.md
+    
+    <!-- Use for: architecture decisions, guides, references -->
+    <!-- NOT for: session-specific notes, temporary work -->
+  </docs_structure>
+
+  <rules>
+    1. ALWAYS check project type before creating files
+    2. Session work → memory-bank/
+    3. Permanent docs → docs/
+    4. Use timestamps for traceability
+    5. Monorepos get service-specific folders
+    6. PKM projects keep flat structure
+  </rules>
+
+  <examples>
+    <!-- Standard project -->
+    memory-bank/20250628-Sa__myproject/20250628-1430-feature-planning.md
+    <!-- Global docs -->
+    docs/architecture/20250628-1430-microservices-decision.md
+  </examples>
+</file_organization>

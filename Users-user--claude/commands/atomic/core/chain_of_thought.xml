@@ -1,0 +1,5 @@
+<chain_of_thought>
+  <!-- 39% improvement - ALWAYS use for complex tasks -->
+  <thinking>Step-by-step reasoning BEFORE answers</thinking>
+  <answer>Final response based on reasoning</answer>
+</chain_of_thought>
